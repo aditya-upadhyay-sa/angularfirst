@@ -1,0 +1,16 @@
+<h1>inside servers component</h1>
+<!-- <input type="text" (input)="showeservername($event)"> -->
+<label>Server Name</label>
+<input type="text" [(ngModel)]="servername">
+
+<p>{{servername}}</p>
+<button class="btn btn-primary"  (click)="oncreateserver()" >
+    Add Server
+    
+    </button>
+<!-- <p>{{servercreationstatus}}</p> -->
+<p *ngIf="servercreated; else noServer">Server name is {{servername}}</p>
+
+<ng-template #noServer>
+    <p>No server was created!</p>
+</ng-template>
